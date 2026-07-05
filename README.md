@@ -1,5 +1,21 @@
 # Twitter Sentiment Analysis using BERT and PyQt GUI
 
+## How to Run
+Run the files in this order:
+
+1. python make_dataset.py
+   → generates dataset/twitter_sentiment.csv
+
+2. python train_bert.py
+   → trains DistilBERT on the dataset, saves model to saved_bert_model/, generates the 4 result graphs
+
+3. python app.py
+   → launches the PyQt GUI. Click "Load Dataset CSV" and select dataset/twitter_sentiment.csv,
+     then click "Load BERT Model" and select the saved_bert_model folder.
+
+Note: saved_bert_model/ is not included in this repo due to GitHub's file size limit.
+Run steps 1 and 2 to regenerate it locally (takes under a minute on CPU with this dataset).
+
 ## Model
 DistilBERT (distilbert-base-uncased) fine-tuned for 3-class sentiment classification (positive, negative, neutral).
 Train/test split: 80/20. Epochs: 3. Batch size: 16.
